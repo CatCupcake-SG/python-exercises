@@ -1,0 +1,17 @@
+string = "1234abcd"
+
+def reverse(string):
+  index = len(string)
+  reverse_list = []
+  reverse_str = ""
+  for n in range(index):
+    n -= index-1
+    n *= -1
+    a = string[n]
+    reverse_list += a
+  for i in reverse_list:
+    reverse_str += i
+  print(reverse_str)
+  
+  
+reverse(string)
