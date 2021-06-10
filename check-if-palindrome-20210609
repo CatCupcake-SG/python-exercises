@@ -1,3 +1,4 @@
+"""reverse the word and check if equates to each other"""
 enter = input("Please enter a word:\n")
 
 def check(word):
@@ -17,10 +18,27 @@ def check(word):
     
     
   if str == enter:
-    print(f"{enter} is a palindrome!")
+    print(f"'{enter}' is a palindrome!")
   else:
-    print(f"{enter} is NOT a palindrome!")
-    
-  
-  
+    print(f"'{enter}' is NOT a palindrome!")
+     
 check(word = str)
+
+"""check the letter position"""
+
+def is_palindrome(string):
+  left_pos = 0
+  right_pos = len(string) - 1
+  palindrome = True
+  while right_pos >= left_pos:
+    if not left_pos == right_pos:
+      palindrome = False
+    left_pos += 1
+    right_pos -=1
+  if palindrome:
+     print(f"'{enter}' is a palindrome!")
+  else:
+    print(f"'{enter}' is NOT a palindrome!")
+
+
+is_palindrome(string = enter)
