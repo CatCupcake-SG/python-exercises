@@ -1,0 +1,22 @@
+list = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+enter = input("Please enter a sentence:\n").lower()
+
+def check():
+  is_pangram = True
+  enter_list = []
+  
+  for i in enter:
+    enter_list += i
+    if i == " ":
+      enter_list.remove(i)
+    
+  for m in  list:
+    if m not in enter_list:
+      is_pangram = False
+  
+  if is_pangram:
+    print("It's a pangram!")
+  else:
+     print("It's NOT a pangram!")
+      
+check()
