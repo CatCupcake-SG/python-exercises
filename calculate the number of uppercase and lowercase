@@ -1,0 +1,32 @@
+print("#using string#")
+string = input("Please enter a sentence here:\n")
+
+def check():
+  upper = ""
+  lower = ""
+  for i in string:
+   if i.isupper():
+     upper += i
+   else:
+     lower += i
+  num_upper = len(upper)
+  num_lower = len(lower)
+  print(f"The number of uppercase is: {num_upper}.\nThe number of lowercase is: {num_lower}.")
+  
+check()
+
+
+print("#using dictionary#")
+d = {
+  "UPPERCASE": 0,
+  "LOWERCASE": 0,
+}
+def test(string):
+  for i  in string:
+    if i.isupper():
+      d["UPPERCASE"] +=1
+    else:
+      d["LOWERCASE"] +=1
+  print(f"The number of uppercase is: {d['UPPERCASE']}.\nThe number of lowercase is: {d['LOWERCASE']}.")
+      
+test(string)
