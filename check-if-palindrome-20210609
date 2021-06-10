@@ -1,0 +1,26 @@
+enter = input("Please enter a word:\n")
+
+def check(word):
+  str_new = []
+  str = ""
+  index = len(enter)
+  
+  """make enter a list"""
+  for m in enter:
+   str_new += m
+   
+  """reverse entered word and make it a new string"""
+  for i in range(index):
+    i -= index - 1
+    i *= -1 
+    str += str_new[i]
+    
+    
+  if str == enter:
+    print(f"{enter} is a palindrome!")
+  else:
+    print(f"{enter} is NOT a palindrome!")
+    
+  
+  
+check(word = str)
