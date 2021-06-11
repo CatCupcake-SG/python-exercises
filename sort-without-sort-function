@@ -1,0 +1,62 @@
+#THERE IS NO .sort() FUNCTION
+list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+enter = input("Please enter a few words separated by space:\n").lower().split(" ")
+enterindex = len(enter)
+ 
+letter_list = []
+sorted_list = []
+final_output = []
+
+continue_checking = True
+
+
+"""get the first char of each item"""
+for i in range(enterindex):
+  char = enter[i][0]
+  #print(char)
+  """identify the position of each char in the alpha list"""
+  letters = list.index(char)
+  letter_list.append(letters)
+#print(letter_list)
+
+
+"""find the greatest number"""
+def find_max():
+  num = 0
+  for m in letter_list:
+    if m == 0:
+      sorted_list.insert(0, m)
+      letter_list.remove(m)
+    elif m > num :
+      num = m
+  """remove the current greatest number from the list"""
+  if num in letter_list:
+    #print(num)
+    letter_list.remove(num)
+
+  """add the greatest in the new list @ the 2nd place"""  
+  sorted_list.insert(1, num)
+   
+find_max()
+"""keep going until all letters are in the new list"""
+while len(sorted_list) != enterindex :
+  find_max()
+    
+            
+#print(f"sort_list{sorted_list}")
+#print(f"enter {enter}")
+
+
+"""identify the first char in the list"""
+for a in sorted_list:
+  letters = list[a]
+  """get the first char in the original string"""
+  for b in range(enterindex):
+    char = enter[b][0]
+    """sort the order if the same"""
+    if char == letters :
+      final_output.append(enter[b])
+
+#print(f"sorted_initials {final_output}")
+output = " ".join(final_output)
+print(output)
